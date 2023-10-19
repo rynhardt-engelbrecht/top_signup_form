@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Monster Pumpkin';
+  src: url('MonsterPumpkin.woff2') format('woff2'),
+      url('MonsterPumpkin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  font-family: 'Eater', 'Permanent Marker', cursive;
+  color: orangered;
+  text-shadow: 2px 2px blue;
+}
+
 body {
   display: flex;
   flex-direction: row;
@@ -11,22 +26,51 @@ body .container {
 }
 
 .container-left {
+  background-image: url("halloween_pumpkin.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: fixed;
+
   display: flex;
   flex-direction: column;
-  flex: 1 1 0;
+  flex: 1 1 200px;
 
-  justify-content: flex-start;
+  justify-content: space-around;
 }
 
 .container-left .overlay-text {
-  flex: 0 1 140px;
-  margin-top: 140px;
+  background-color: rgba(60, 60, 100, 0.5);
+  /* color: white; */
+
+  flex: 0 1 80px;
+  /* margin-top: 200px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-wrap: wrap;
+  font-size: 40px;
+}
+
+.container-left .image-credit {
+  box-sizing: content-box;
+  background-color: rgba(60, 60, 100, 0.5);
+  /* color: white; */
+  /* text-shadow: 1px 1px #000; */
+
+  /* height: 20px; */
+  padding: 2px;
+  margin-bottom: -80px;
+}
+
+.container-left .image-credit a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 .container-right {
   display: flex;
   flex-direction: column;
-  flex: 2 1 0;
+  flex: 2 0 400px;
 }
 
 .container-right .header-container {
@@ -46,5 +90,5 @@ body .container {
 }
 
 div {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
