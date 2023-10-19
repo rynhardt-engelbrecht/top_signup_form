@@ -1,0 +1,50 @@
+body {
+  display: flex;
+  flex-direction: row;
+
+  margin: 0;
+}
+
+body .container {
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.container-left {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+
+  justify-content: flex-start;
+}
+
+.container-left .overlay-text {
+  flex: 0 1 140px;
+  margin-top: 140px;
+}
+
+.container-right {
+  display: flex;
+  flex-direction: column;
+  flex: 2 1 0;
+}
+
+.container-right .header-container {
+  flex: 1 1 0;
+}
+
+.container-right .form-container {
+  flex: 2 1 0;
+}
+
+.container-right .button-container {
+  flex: 1 1 0;
+}
+
+.container-right .container {
+  display: flex;
+}
+
+div {
+  border: 1px solid red;
+}
