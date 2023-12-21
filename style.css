@@ -1,94 +1,339 @@
-@font-face {
-  font-family: 'Monster Pumpkin';
-  src: url('MonsterPumpkin.woff2') format('woff2'),
-      url('MonsterPumpkin.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+:root {
+  --primary-color: rgb(224, 128, 17);
+  --primary-shadow: rgb(134, 77, 12);
+  --primary-accent: rgb(255, 136, 0);
+  --secondary-color: rgb(48, 32, 96);
+  --secondary-shadow: rgb(26, 14, 59);
+  --secondary-accent: rgb(64, 46, 116);
 }
 
-html {
-  font-family: 'Eater', 'Permanent Marker', cursive;
-  color: orangered;
-  text-shadow: 2px 2px blue;
+@font-face {
+  font-family: 'OctoberCrow';
+  src: url('./fonts/October\ Crow.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CoralinesCat';
+  src: url('./fonts/Coraline\'s\ Cat.ttf') format('truetype');
 }
 
 body {
-  display: flex;
-  flex-direction: row;
-
-  margin: 0;
-}
-
-body .container {
-  height: 100vh;
-  box-sizing: border-box;
-}
-
-.container-left {
-  background-image: url("halloween_pumpkin.jpg");
+  background-image: url(images/pumpkin_skull.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: fixed;
 
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 200px;
+  margin: 0;
+  font-size: 28px;
 
-  justify-content: space-around;
-}
-
-.container-left .overlay-text {
-  background-color: rgba(60, 60, 100, 0.5);
-  /* color: white; */
-
-  flex: 0 1 80px;
-  /* margin-top: 200px; */
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-wrap: wrap;
-  font-size: 40px;
-}
-
-.container-left .image-credit {
-  box-sizing: content-box;
-  background-color: rgba(60, 60, 100, 0.5);
-  /* color: white; */
-  /* text-shadow: 1px 1px #000; */
-
-  /* height: 20px; */
-  padding: 2px;
-  margin-bottom: -80px;
-}
-
-.container-left .image-credit a {
-  color: inherit;
-  text-decoration: underline;
-}
-
-.container-right {
-  display: flex;
-  flex-direction: column;
-  flex: 2 0 400px;
-}
-
-.container-right .header-container {
-  flex: 1 1 0;
-}
-
-.container-right .form-container {
-  flex: 2 1 0;
-}
-
-.container-right .button-container {
-  flex: 1 1 0;
-}
-
-.container-right .container {
-  display: flex;
+  font-family: 'CoralinesCat', cursive;
+  font-weight: bold;
+  background-color: var(--secondary-shadow);
 }
 
 div {
+  box-sizing: border-box;
   /* border: 1px solid red; */
+}
+
+.container {
+  height: 100vh;
+  width: 140vh;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.banner {
+  justify-content: space-between;
+}
+
+.banner .banner-header {
+  display: flex;
+  height: 128px;
+  z-index: 1;
+
+  text-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 128px;
+  padding: 8px;
+
+  color: var(--primary-accent);
+  text-shadow: 2px 2px 6px var(--primary-shadow);
+}
+
+.banner .image-credit {
+  display: flex;
+  height: 24px;
+  z-index: 1;
+
+  font-size: 8px;
+
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
+
+  color: var(--primary-accent);
+  text-shadow: 2px 2px 4px var(--secondary-shadow);
+}
+
+.image-credit a {
+  color: var(--primary-accent);
+}
+
+.container .banner {
+  /* background-image: url(images/pumpkin_book_stack.jpg); */
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  flex: 1 1 0;
+  flex-direction: column;
+
+  background-color: rgba(64, 46, 116, 0.2);
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+
+  background-image: url('images/witch3.png');
+  background-position: 100% 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+  z-index: 0;
+  transform: scaleX(-1);
+}
+
+.container .form {
+  position: relative;
+
+  flex: 2 1 0;
+  flex-direction: column;
+  background-color: rgba(64, 46, 116, 0.9);
+  padding: 8px;
+}
+
+.form-header,
+.form-footer {
+  font-size: 14px;
+  display: flex;
+
+  text-align: center;
+  text-shadow: 6px 6px 4px var(--secondary-shadow);
+  align-items: center;
+  text-wrap: wrap;
+  color: var(--primary-accent);
+}
+
+.form-footer {
+  font-size: 8px;
+
+  align-items: end;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.form-footer a {
+  color: var(--primary-accent);
+}
+
+.form-footer p {
+  margin-bottom: 0;
+}
+
+.sign-up::before {
+  content: "Invalid fields are indicated by";
+
+  position: absolute;
+  top: -24px;
+
+  font-size: 8px;
+  color: var(--primary-accent);
+  text-shadow: 4px 4px 4px var(--secondary-shadow);
+}
+
+.sign-up::after {
+  content: "X";
+
+  display: inline-block;
+  margin-left: 6px;
+
+  color: var(--primary-accent);
+  background-color: var(--secondary-shadow);
+
+  position: absolute;
+  top: -26px;
+  left: 190px;
+
+  width: 20px;
+  font-size: 10px;
+  text-align: center;
+}
+
+.form-container {
+  flex: 3 1 0;
+
+  position: relative;
+
+  background-image: url('images/winking_pumpkin.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-container .sign-up {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  font-family: 'CoralinesCat';
+  font-size: 12px;
+
+  color: var(--secondary-color);
+  background-color: rgba(255, 136, 0, 0.8);
+  box-shadow: 0 6px 12px var(--secondary-shadow);
+
+  position: relative;
+}
+
+.sign-up div {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.input-flex {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+}
+
+.input-flex label {
+  text-shadow: 2px 2px 2px var(--primary-shadow);
+  width: 100%;
+}
+
+.input-flex {
+  position: relative;
+}
+
+.input-flex input {
+  font-family: 'OctoberCrow';
+  font-size: 16px;
+  border: 2px solid var(--secondary-color);
+  background-color: var(--secondary-accent);
+  color: var(--primary-accent);
+  border-radius: 4px 0;
+  position: relative;
+  padding-right: 30px;
+}
+
+.input-flex input.visited:invalid {
+  border: 2px dotted black;
+}
+
+.input-flex input.visited:invalid + .error-message,
+input[type="password"].invalid + .error-message {
+  display: inline-block;
+}
+
+.input-flex .error-message {
+  content: 'X';
+  text-align: center;
+  width: 20px;
+  background-color: var(--secondary-shadow);
+  color: var(--primary-accent);
+  font-size: 10px;
+  position: absolute;
+  right: -20px;
+  top: 36px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: none;
+}
+
+span.non-match {
+  display: none;
+}
+
+span.non-match.visible {
+  display: inline-block;
+  position: absolute;
+  right: -32px;
+  top: 5px;
+
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.form * {
+  flex: 2 1 0;
+}
+
+.password-info {
+  display: none;
+}
+
+.password-info.invalid {
+  display: block;
+  position: absolute;
+
+  font-size: 8px;
+  color: var(--primary-accent);
+  bottom: -92px;
+  right: 0;
+
+  text-shadow: 2px 2px 4px var(--secondary-shadow);
+}
+
+.button-container {
+  font-family: 'CoralinesCat', cursive;
+  font-size: 9px;
+  text-shadow: 6px 6px 4px var(--secondary-shadow);
+
+  position: absolute;
+  bottom: -84px;
+  left: 12px;
+
+  color: var(--primary-accent);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.button-container a {
+  text-decoration: underline;
+  color: var(--primary-accent);
+}
+
+.submit.button {
+  font-family: 'CoralinesCat', cursive;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 2px 2px 2px var(--primary-shadow);
+
+  border: none;
+  border-radius: 4px 0;
+  padding: 6px 18px;
+
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  box-shadow: 0 4px 6px var(--secondary-shadow);
+
+  align-self: flex-start;
+}
+
+.submit.button:hover {
+  cursor: pointer;
 }
