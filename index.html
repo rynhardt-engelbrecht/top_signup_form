@@ -3,26 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Eater&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
+  <title>Document</title>
 </head>
 <body>
-  <div class="side-panel container container-left">
-    <div class="container overlay-text">
-      This is Halloween
+  <div class="container">
+    <div class="banner container">
+      <div class="banner-header">
+        Halloweve's Broom
+      </div>
+      <!-- <div class="overlay"></div> -->
     </div>
-    <div class="image-credit">
-      Photo by <a href="https://unsplash.com/@luki90pl?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Łukasz Nieścioruk</a> on <a href="https://unsplash.com/photos/jack-o-lantern-on-brown-wooden-table-xVG-TpHG2NY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+    <div class="form container">
+      <div class="form-header">
+        <p>Have you ever wanted to be a witch's broom? Now is your chance! Halloweve broke her broom during her last flight, and is looking for volunteers!</p>
+      </div>
+
+      <div class="form-container">
+        <form action="#" method="post" class="sign-up">
+          <div class="row-1">
+            <div class="input-flex">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name" required>
+              <span class="error-message">X</span>
+            </div>
+
+            <div class="input-flex">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last-name" required>
+              <span class="error-message">X</span>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="input-flex">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+              <span class="error-message">X</span>
+            </div>
+
+            <div class="input-flex">
+              <label for="phone-number">Phone Number</label>
+              <input type="text" id="phone-number" name="phone-number" required>
+              <span class="error-message">X</span>
+            </div>
+          </div>
+          <div class="row-3">
+            <div class="input-flex">
+              <label for="password">Password <span class="non-match">(Passwords don't match)</span></label>
+              <input type="password" id="password" name="password" required>
+              <span class="error-message">X</span>
+              <span class="non-match"></span>
+            </div>
+
+            <div class="input-flex">
+              <label for="password-confirm">Confirm Password</label>
+              <input type="password" id="password-confirm" name="password-confirm" required>
+              <span class="error-message">X</span>
+            </div>
+          </div>
+          <div class="button-container">
+            <input type="submit" value="Submit" class="submit button">
+            <p>Already registered? <a href="#">log in</a>.</p>
+          </div>
+        </form>
+        <div class="password-info">
+          Password should: <br>
+          <ul>
+            <li>Contain at least 6 characters.</li>
+            <li>Contain at least one uppercase character.</li>
+            <li>Contain at least one number character.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="form-footer">
+        <p>
+          Background image credits go to <a target="_blank" href="https://unsplash.com/@lufoster?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Lucia Foster</a> on <a href="https://unsplash.com/photos/jack-o-lantern-with-light-qPtB_GTcyO8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+          and <a target="_blank" href="https://unsplash.com/@freestocks?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">freestocks</a> on <a href="https://unsplash.com/photos/person-holding-cattle-skull-surrounded-by-squash-and-candles-y_dCjaRWthY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="container container-right">
-    <div class="container header-container"></div>
-    <div class="container form-container"></div>
-    <div class="container button-container"></div>
-    <div></div>
   </div>
 </body>
 </html>
